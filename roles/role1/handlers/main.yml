@@ -1,0 +1,3 @@
+
+- name: restart {{ role1_name }}
+  debug: var=role1_name

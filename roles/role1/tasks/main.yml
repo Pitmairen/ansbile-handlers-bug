@@ -1,0 +1,5 @@
+
+
+- name: Test {{ role1_name }}
+  command: /bin/true
+  notify: restart {{ role1_name }}

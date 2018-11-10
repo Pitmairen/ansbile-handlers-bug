@@ -1,0 +1,23 @@
+
+
+- name: Ansible handler bug
+  hosts: localhost
+  vars:
+    service2_name: service2
+  tasks:
+
+    - include_role:
+        name: role1
+      vars:
+        role1_name: service1
+
+    - include_role:
+        name: role1
+      vars:
+        role1_name: "{{ service2_name }}"
+
+    - include_role:
+        name: role1
+      vars:
+        role1_name: "{{ service3_name }}"
+
